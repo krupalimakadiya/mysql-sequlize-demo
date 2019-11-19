@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "mysql sequlize rest api using node js ",
   "main": "app.js",
-  "scripts": {        
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"    
+    "pretest": "eslint --ignore-path .gitignore .",
+    "start": "node app.js"
   },
   "author": "Krupali Makadiya",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "sequelize": "^5.12.2"
   },
   "devDependencies": {
+    "eslint": "^6.2.1",
     "nodemon": "^1.19.1"
   }
 }

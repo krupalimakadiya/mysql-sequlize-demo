@@ -27,15 +27,16 @@ if(companyData === 1) {
 }
 
 exports.update = async (req, res) => {
+  console.log('req.body', req.body);
+  
   const companyId = req.body.id;  
-  const newData = { name: req.body.companyName };  
-  const updatedData = await CompanyModel.update(newData, {
-    where: {id: companyId},      
-    plain: true});
-  console.log('update', updatedData);
-  if(companyData === 1) {
-    return res.send('Record Updated Successfully');  
-  } else {
-    return res.send('Record Not Updated');
-  }    
+  const newData = { name: req.body.name };  
+  
+  await CompanyModel.update(newData, {
+    where: {id: companyId}});  
+
+  const userData = await CompanyModel.findAll({
+      where: { id: companyId }
+    });
+  res.send(userData);
 }

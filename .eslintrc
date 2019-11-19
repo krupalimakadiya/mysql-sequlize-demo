@@ -1,0 +1,17 @@
+{
+    "env": {
+      "node": 1,
+      "browser": 1
+    },
+    "globals": {
+      "exampleGlobalVariable": true
+    },
+    "rules": {
+      "eqeqeq": 1
+    },
+    "extends": "airbnb-base",
+    "plugins": ["import"],
+    "parserOptions": {
+        "ecmaVersion": 6
+    } 
+  }
